@@ -7,6 +7,7 @@ public class Main {
 
         System.out.print("hola2");
         System.out.println("tomate");
+        System.out.println("tomate");
 
     }
 }
