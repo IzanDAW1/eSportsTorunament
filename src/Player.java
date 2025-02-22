@@ -32,6 +32,6 @@ public class Player extends Participant{
 
     @Override
     public String toString() {
-        return "Nombre: "+name+" , Level: "+level+" , Ranking: "+ranking;
+        return " Player: "+name+" , Level: "+level+" , Ranking: "+ranking;
     }
 }

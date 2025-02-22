@@ -17,4 +17,19 @@ public class Team extends Participant{
             countOfPlayers++;
         }
     }
+    public Player[] getPlayers() {
+        return players;
+    }
+
+    @Override
+    public String toString() {
+        String playersInfo = "";
+        for (int i = 0; i < countOfPlayers; i++) {
+            playersInfo = players[i].toString();
+            System.out.println(playersInfo);
+        }
+
+        return "Nombre: "+name+" , Members: "+countOfPlayers +"/5"
+                + playersInfo;
+    }
 }
