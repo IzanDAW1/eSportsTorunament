@@ -4,5 +4,7 @@ public class Main {
         System.out.println("This is a test to prove that github is vinculated correctly :)");
         System.out.println("Another test for");
         System.out.print("hola");
+
+        System.out.print("hola2");
     }
 }
