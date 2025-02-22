@@ -29,4 +29,9 @@ public class Player extends Participant{
     {
         this.ranking=ranking;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: "+name+" , Level: "+level+" , Ranking: "+ranking;
+    }
 }
