@@ -1,5 +1,5 @@
 public abstract class Participant {
-    String name;
+    protected String name;
 
     public Participant(String name)
     {
