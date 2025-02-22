@@ -1,19 +1,19 @@
 public class Team extends Participant{
-    Player[] players = new Player[5];
+    Player[] players;
     int countOfPlayers;
 
-    public Team(String name,Player[] players) {
+    public Team(String name) {
         super(name);
-        this.players=players;
+        this.players = new Player[5];
         countOfPlayers=0;
     }
 
-    public void AddPlayer(Player p){
-        if(countOfPlayers>5){
-            throw new fullTeamException("Reached the max ammount of players in a team. Sorry");
+    public void AddPlayer(Player pl) throws fullTeamException{
+        if(countOfPlayers>=players.length){
+            throw new fullTeamException("Reached the max amount of players in a team.");
         }
         else{
-            players[countOfPlayers]=p;
+            players[countOfPlayers] = pl;
             countOfPlayers++;
         }
     }
