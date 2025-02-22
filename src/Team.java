@@ -8,12 +8,12 @@ public class Team extends Participant{
         countOfPlayers=0;
     }
 
-    public void AddPlayer(Player p) throws fullTeamException{
+    public void AddPlayer(Player pl) throws fullTeamException{
         if(countOfPlayers>=players.length){
             throw new fullTeamException("Reached the max amount of players in a team.");
         }
         else{
-            players[countOfPlayers]=p;
+            players[countOfPlayers] = pl;
             countOfPlayers++;
         }
     }
