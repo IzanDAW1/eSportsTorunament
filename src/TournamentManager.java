@@ -9,6 +9,10 @@ public class TournamentManager {
 
     public TournamentManager()
     {
+    }
+
+    public void Initialized()
+    {
         players = rellenarPlayers();
         teams = rellenarTeams();
         tournaments = rellenarTournaments();
