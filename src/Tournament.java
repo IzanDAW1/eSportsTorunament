@@ -9,16 +9,26 @@ public abstract class Tournament {
         this.prize = prize;
     }
 
-    public void SetName(String name){
+    public void setName(String name){
         this.name = name;
     }
-    public String GetName(){
+    public String getName(){
         return name;
     }
-    public void SetAssociatedGame(String associatedGame){
+    public void setAssociatedGame(String associatedGame){
         this.associatedGame = associatedGame;
     }
-    public String GetAssociatedGame(){
+    public String getAssociatedGame(){
         return associatedGame;
+    }
+    public void setPrize(int prize){
+        this.prize = prize;
+    }
+    public int getPrize(){
+        return prize;
+    }
+    @Override
+    public String toString(){
+        return name + "(" + associatedGame + ")";
     }
 }
