@@ -1,7 +1,7 @@
 public abstract class Tournament {
-    String name;
-    String associatedGame;
-    int prize;
+    protected String name;
+    protected String associatedGame;
+    protected int prize;
 
     public Tournament(String name, String associatedGame, int prize){
         this.name = name;
