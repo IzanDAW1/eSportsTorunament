@@ -1,6 +1,6 @@
 public class MixedTournament extends Tournament{
 
-    protected String gameMode;
+    String gameMode;
 
     public MixedTournament(String name, String associatedGame, int prize,String gameMode) {
         super(name, associatedGame, prize);
