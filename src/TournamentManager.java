@@ -62,8 +62,7 @@ public class TournamentManager {
     {
         Random r = new Random();
         int numeroPartidas = r.nextInt(1,11);
-        Match[] partidas = new Match[numeroPartidas];
 
-        return partidas;
+        return new Match[numeroPartidas];
     }
 }
