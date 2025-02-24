@@ -48,6 +48,7 @@ public class TournamentManager {
         return equipos;
     }
 
+
     public Tournament[] rellenarTournaments()
     {
         Tournament[] torneos = new Tournament[3];
@@ -61,6 +62,7 @@ public class TournamentManager {
     public Match[] rellenarMatches()
     {
         Random r = new Random();
+        String hoka;
         int numeroPartidas = r.nextInt(1,11);
 
         return new Match[numeroPartidas];
