@@ -40,15 +40,19 @@ public class TournamentManager {
     public Team[] rellenarTeams()
     {
         Team[] equipos = new Team[5];
-        equipos[0]=new Team("Izan");
-        equipos[1]=new Team("Sergio");
-        equipos[2]=new Team("Alejandro");
-        equipos[3]=new Team("Marcos");
-        equipos[4]=new Team("Nico");
+        equipos[0]=new Team("Team1");
+        equipos[1]=new Team("Team2");
+        equipos[2]=new Team("Team3");
+        equipos[3]=new Team("Team4");
+        equipos[4]=new Team("Team5");
+
+
 
         return equipos;
     }
-
+    public Team fillTeam(Team team){
+        return team;
+    }
 
     public Tournament[] rellenarTournaments()
     {
@@ -62,7 +66,6 @@ public class TournamentManager {
     public Match[] rellenarMatches()
     {
         Random r = new Random();
-        String hoka;
         int numeroPartidas = r.nextInt(1,11);
 
         return new Match[numeroPartidas];
@@ -91,6 +94,14 @@ public class TournamentManager {
     {
         Arrays.sort(tournaments);
         for(Tournament t:tournaments)
+        {
+            System.out.println(t);
+        }
+    }
+
+    public void showTeamRanking(){
+        Arrays.sort(teams);
+        for(Team t:teams)
         {
             System.out.println(t);
         }

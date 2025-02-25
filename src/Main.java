@@ -34,7 +34,7 @@ public class Main {
                 tm.showPlayerRanking();
                 break;
             case "3":
-
+                tm.showTeamRanking();
                 break;
             case "4":
 
