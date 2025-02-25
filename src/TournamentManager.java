@@ -56,7 +56,6 @@ public class TournamentManager {
         torneos[1]= new MixedTournament("VCT","Valorant",43000,"Banned characters");
         torneos[2]= new TeamTournament("RLCS","Fortnite",540000,4);
 
-
         return torneos;
     }
     public Match[] rellenarMatches()
