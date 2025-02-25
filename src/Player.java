@@ -48,18 +48,7 @@ public class Player extends Participant implements Comparable<Player>{
         }
         else if(this.getRanking()==p2.getRanking())
         {
-            if(this.getName().compareTo(p2.getName())>0)
-            {
-                result = 1;
-            }
-            else if(this.getName().compareTo(p2.getName())<0)
-            {
-                result = -1;
-            }
-            else
-            {
-                result = 0;
-            }
+            result = Integer.compare(this.getName().compareTo(p2.getName()), 0);
         }
         return result;
     }

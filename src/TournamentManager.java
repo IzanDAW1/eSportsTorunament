@@ -1,4 +1,5 @@
 import java.awt.event.ItemEvent;
+import java.util.Arrays;
 import java.util.Random;
 
 public class TournamentManager {
@@ -24,9 +25,9 @@ public class TournamentManager {
         Player[] jugadores = new Player[10];
         jugadores[0]=new Player("Izan",3,19);
         jugadores[1]=new Player("Sergio",6,14);
-        jugadores[2]=new Player("Alejandro",4,13);
+        jugadores[2]=new Player("Alejandro",4,14);
         jugadores[3]=new Player("Marcos",7,16);
-        jugadores[4]=new Player("Nico",12,17);
+        jugadores[4]=new Player("Nico",12,16);
         jugadores[5]=new Player("Adrian",14,18);
         jugadores[6]=new Player("Gabriel",11,11);
         jugadores[7]=new Player("Yassin",32,12);
@@ -65,5 +66,13 @@ public class TournamentManager {
         int numeroPartidas = r.nextInt(1,11);
 
         return new Match[numeroPartidas];
+    }
+    public void showPlayerRanking()
+    {
+        Arrays.sort(players);
+        for(Player p:players)
+        {
+            System.out.println(p);
+        }
     }
 }
