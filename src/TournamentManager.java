@@ -75,4 +75,16 @@ public class TournamentManager {
             System.out.println(p);
         }
     }
+    public Player findPlayer(String name)
+    {
+        Player player = new Player("",0,0);
+        for(Player p:players)
+        {
+            if(p.getName().equals(name))
+            {
+                player = p;
+            }
+        }
+        return player;
+    }
 }

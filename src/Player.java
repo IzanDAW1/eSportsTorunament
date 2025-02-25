@@ -32,7 +32,7 @@ public class Player extends Participant implements Comparable<Player>{
 
     @Override
     public String toString() {
-        return " Player: "+name+" , Level: "+level+" , Ranking: "+ranking;
+        return "Player: "+name+" , Level: "+level+" , Ranking: "+ranking;
     }
 
     @Override

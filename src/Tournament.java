@@ -1,4 +1,4 @@
-public abstract class Tournament {
+public abstract class Tournament implements Comparable<Tournament>{
     protected String name;
     protected String associatedGame;
     protected int prize;
@@ -30,5 +30,9 @@ public abstract class Tournament {
     @Override
     public String toString(){
         return name + "(" + associatedGame + ")";
+    }
+    @Override
+    public int compareTo(Tournament o) {
+        return this.name.compareTo(o.name);
     }
 }

@@ -24,6 +24,7 @@ public class Main {
     public static void main(String[] args) {
         TournamentManager tm = new TournamentManager();
         tm.Initialized();
+        Scanner sc = new Scanner(System.in);
         switch (GenerateMenu())
         {
             case "1":
@@ -39,7 +40,9 @@ public class Main {
 
                 break;
             case "5":
-
+                System.out.println("Dime un jugador que quieras buscar: ");
+                String nombre = sc.nextLine();
+                System.out.println(tm.findPlayer(nombre));
                 break;
             case "6":
 
