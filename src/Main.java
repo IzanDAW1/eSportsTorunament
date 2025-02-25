@@ -28,7 +28,7 @@ public class Main {
         switch (GenerateMenu())
         {
             case "1":
-
+                tm.showTournaments();
                 break;
             case "2":
                 tm.showPlayerRanking();

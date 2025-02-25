@@ -87,4 +87,12 @@ public class TournamentManager {
         }
         return player;
     }
+    public void showTournaments()
+    {
+        Arrays.sort(tournaments);
+        for(Tournament t:tournaments)
+        {
+            System.out.println(t);
+        }
+    }
 }
