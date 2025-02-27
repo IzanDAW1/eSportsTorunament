@@ -7,22 +7,13 @@ public class Team extends Participant implements Comparable<Team>{
     }
 
     public void AddPlayer(Player pl) throws fullTeamException {
-        boolean added = false;
-        for (int i = 0; i < players.length; i++)
-        {
-            if (players[i] == null && !added)
-            {
+        for (int i = 0; i < players.length; i++) {
+            if (players[i] == null) {
                 players[i] = pl;
-                added = true;
+                return;
             }
         }
-        if (!added)
-        {
-            throw new fullTeamException("Reached the max amount of players in a team.");
-        }
-    }
-    public Player[] getPlayers() {
-        return players;
+        throw new fullTeamException("Reached the max amount of players in a team.");
     }
 
     @Override
@@ -70,6 +61,7 @@ public class Team extends Participant implements Comparable<Team>{
                 playersNotNull[i] = players[i];
             }
         }
+
         double result=0;
         for(int i=0;i<playersNotNull.length;i++)
         {

@@ -23,7 +23,7 @@ public class TournamentManager {
 
     public Player[] rellenarPlayers()
     {
-        Player[] jugadores = new Player[10];
+        Player[] jugadores = new Player[15];
         jugadores[0]=new Player("Izan",3,19);
         jugadores[1]=new Player("Sergio",6,14);
         jugadores[2]=new Player("Alejandro",4,14);
@@ -118,7 +118,7 @@ public class TournamentManager {
         Arrays.sort(teams);
         for(Team t:teams)
         {
-            System.out.println(t);
+            System.out.println(t + " Average Ranking: " + t.getAverageRanking());
         }
     }
 
@@ -131,25 +131,21 @@ public class TournamentManager {
         }
         System.out.println("Which team did you want to fill?");
         int option = sc.nextInt();
+        sc.nextLine();
 
         System.out.println("Which player did you want to add?: ");
         String name = sc.nextLine();
-        sc.nextLine();
         System.out.println("Player level?: ");
-        String level = sc.nextLine();
+        int level = sc.nextInt();
         System.out.println("Player ranking?: ");
-        String ranking = sc.nextLine();
-        Player pl = new Player(name,Integer.parseInt(level),Float.parseFloat(ranking));
-        try
-        {
-            teams[option-1].AddPlayer(pl);
-        }
-        catch (fullTeamException e)
-        {
+        float ranking = sc.nextFloat();
+        Player pl = new Player(name, level, ranking);
+
+        try {
+            teams[option - 1].AddPlayer(pl);
+            System.out.println("Player added successfully to " + teams[option - 1].getName());
+        } catch (fullTeamException e) {
             System.out.println(e.getMessage());
         }
-
-
-
     }
 }
