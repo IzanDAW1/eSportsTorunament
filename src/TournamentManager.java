@@ -41,10 +41,10 @@ public class TournamentManager {
     public Team[] rellenarTeams()
     {
         Team[] equipos = new Team[5];
-        equipos[0]=new Team("Team1");
-        equipos[1]=new Team("Team2");
+        equipos[0]=new Team("Team1",new Player[]{players[0],players[1]});
+        equipos[1]=new Team("Team2",new Player[]{players[0],players[1]});
         equipos[2]=new Team("Team3",new Player[]{players[0],players[1],players[2],players[3],players[4]});
-        equipos[3]=new Team("Team4");
+        equipos[3]=new Team("Team4",new Player[]{players[0],players[1]});
         equipos[4]=new Team("Team5",new Player[]{players[5],players[6],players[7],players[8],players[9]});
 
         return equipos;
@@ -118,7 +118,7 @@ public class TournamentManager {
         Arrays.sort(teams);
         for(Team t:teams)
         {
-            System.out.println(t);
+            System.out.println(t.name + " : " + t.getAverageRanking());
         }
     }
 
@@ -140,6 +140,7 @@ public class TournamentManager {
         System.out.println("Player ranking?: ");
         String ranking = sc.nextLine();
         Player pl = new Player(name,Integer.parseInt(level),Float.parseFloat(ranking));
+        System.out.println(pl.getName() + pl.getLevel() + pl.getRanking());
         try
         {
             teams[option-1].AddPlayer(pl);

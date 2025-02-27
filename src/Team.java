@@ -31,55 +31,25 @@ public class Team extends Participant implements Comparable<Team>{
 
     @Override
     public String toString() {
-        int count = 0;
-        for(Player p:players)
-        {
-            if(p!=null)
-            {
-                count++;
-            }
-        }
-        Player[] playersNotNull = new Player[count];
-        for(int i = 0; i<players.length;i++)
-        {
-            if(players[i]!=null)
-            {
-                playersNotNull[i] = players[i];
-            }
-        }
+
         String playersInfo = "";
-        for (int i = 0; i < playersNotNull.length; i++) {
-            playersInfo += playersNotNull[i].toString() + "\n";
+        for (int i = 0; i < players.length; i++) {
+            playersInfo += players[i].toString() + "\n";
         }
 
-        return "Nombre: "+name+" , Members: " + playersNotNull.length +"/5 \n"
+        return "Nombre: "+name+" , Members: " + players.length +"/5 \n"
                 + playersInfo;
     }
 
     public double getAverageRanking()
     {
-        int count = 0;
-        for(Player p:players)
-        {
-            if(p!=null)
-            {
-                count++;
-            }
-        }
-        Player[] playersNotNull = new Player[count];
-        for(int i = 0; i<players.length;i++)
-        {
-            if(players[i]!=null)
-            {
-                playersNotNull[i] = players[i];
-            }
-        }
+
         double result=0;
-        for(int i=0;i<playersNotNull.length;i++)
+        for(int i=0;i<players.length;i++)
         {
-            result+=playersNotNull[i].getRanking();
+            result+=players[i].getRanking();
         }
-        return result/playersNotNull.length;
+        return result/players.length;
     }
 
     @Override
