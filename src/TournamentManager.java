@@ -133,14 +133,16 @@ public class TournamentManager {
         int option = sc.nextInt();
 
         System.out.println("Which player did you want to add?: ");
-        String name = sc.nextLine();
-        sc.nextLine();
+        String name = sc.next();
+
         System.out.println("Player level?: ");
-        String level = sc.nextLine();
+        int level = sc.nextInt();
+
         System.out.println("Player ranking?: ");
-        String ranking = sc.nextLine();
-        Player pl = new Player(name,Integer.parseInt(level),Float.parseFloat(ranking));
-        System.out.println(pl.getName() + pl.getLevel() + pl.getRanking());
+        float ranking = sc.nextFloat();
+
+        Player pl = new Player(name,level,ranking);
+        System.out.println(pl);
         try
         {
             teams[option-1].AddPlayer(pl);
