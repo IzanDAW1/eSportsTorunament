@@ -1,6 +1,7 @@
 import java.awt.event.ItemEvent;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class TournamentManager {
     Player[] players;
@@ -45,9 +46,6 @@ public class TournamentManager {
         jugadores[19] = new Player("Daniel", 8, 14);
         jugadores[20] = new Player("Isabella", 14, 26);
         jugadores[21] = new Player("Valeria", 16, 31);
-        jugadores[22] = new Player("Martina", 19, 48);
-        jugadores[23] = new Player("Paula", 21, 53);
-        jugadores[24] = new Player("Adriana", 13, 24);
 
         return jugadores;
     }
@@ -59,7 +57,7 @@ public class TournamentManager {
         equipos[1]=new Team("Team2",new Player[]{players[5],players[6],players[7],players[8],players[9]});
         equipos[2]=new Team("Team3",new Player[]{players[13],players[11],players[15],players[17],players[18]});
         equipos[3]=new Team("Team4",new Player[]{players[10],players[12],players[14],players[16],players[19]});
-        equipos[4]=new Team("Team5",new Player[]{players[20],players[21],players[22],players[23],players[24]});
+        equipos[4]=new Team("Team5",new Player[]{players[20],players[21]});
 
         return equipos;
     }
@@ -117,6 +115,21 @@ public class TournamentManager {
         for(Team t:teams)
         {
             System.out.println(t.getName() + " Ranking: " + t.getAverageRanking());
+        }
+    }
+
+    public void addPlayerToTeam()
+    {
+        Scanner sc = new Scanner(System.in);
+        for(Tournament t:tournaments)
+        {
+            System.out.println(t);
+        }
+        System.out.println("Which team did you want to fill?");
+        int option = sc.nextInt();
+        for (int i=0;i<teams.length;i++)
+        {
+            System.out.println(teams[option-1]);
         }
     }
 }

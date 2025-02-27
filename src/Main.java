@@ -38,7 +38,7 @@ public class Main {
                     tm.showTeamRanking();
                     break;
                 case "4":
-
+                    tm.addPlayerToTeam();
                     break;
                 case "5":
                     System.out.println("Dime un jugador que quieras buscar: ");
