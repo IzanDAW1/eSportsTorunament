@@ -63,9 +63,8 @@ public class Team extends Participant implements Comparable<Team>{
         }
 
         double result=0;
-        for(int i=0;i<playersNotNull.length;i++)
-        {
-            result+=playersNotNull[i].getRanking();
+        for (Player player : playersNotNull) {
+            result += player.getRanking();
         }
         return result/playersNotNull.length;
     }
