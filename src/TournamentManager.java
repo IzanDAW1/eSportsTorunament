@@ -118,7 +118,7 @@ public class TournamentManager {
         Arrays.sort(teams);
         for(Team t:teams)
         {
-            System.out.println(t.name + " : " + t.getAverageRanking());
+            System.out.println(t + " Average Ranking: " + t.getAverageRanking());
         }
     }
 
