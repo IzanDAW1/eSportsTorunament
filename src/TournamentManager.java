@@ -23,7 +23,7 @@ public class TournamentManager {
 
     public Player[] rellenarPlayers()
     {
-        Player[] jugadores = new Player[25];
+        Player[] jugadores = new Player[10];
         jugadores[0]=new Player("Izan",3,19);
         jugadores[1]=new Player("Sergio",6,14);
         jugadores[2]=new Player("Alejandro",4,14);
@@ -34,18 +34,6 @@ public class TournamentManager {
         jugadores[7]=new Player("Yassin",32,12);
         jugadores[8]=new Player("Miguel",12,10);
         jugadores[9]=new Player("Carlos",5,9);
-        jugadores[10] = new Player("Jose",6,12);
-        jugadores[11] = new Player("Maria", 15, 30);
-        jugadores[12] = new Player("Luis", 20, 50);
-        jugadores[13] = new Player("Ana", 18, 45);
-        jugadores[14] = new Player("Carlos", 12, 22);
-        jugadores[15] = new Player("Laura", 25, 65);
-        jugadores[16] = new Player("Miguel", 10, 18);
-        jugadores[17] = new Player("Elena", 17, 38);
-        jugadores[18] = new Player("Sofia", 22, 55);
-        jugadores[19] = new Player("Daniel", 8, 14);
-        jugadores[20] = new Player("Isabella", 14, 26);
-        jugadores[21] = new Player("Valeria", 16, 31);
 
         return jugadores;
     }
@@ -53,11 +41,11 @@ public class TournamentManager {
     public Team[] rellenarTeams()
     {
         Team[] equipos = new Team[5];
-        equipos[0]=new Team("Team1",new Player[]{players[0],players[1],players[2],players[3],players[4]});
-        equipos[1]=new Team("Team2",new Player[]{players[5],players[6],players[7],players[8],players[9]});
-        equipos[2]=new Team("Team3",new Player[]{players[13],players[11],players[15],players[17],players[18]});
-        equipos[3]=new Team("Team4",new Player[]{players[10],players[12],players[14],players[16],players[19]});
-        equipos[4]=new Team("Team5",new Player[]{players[20],players[21]});
+        equipos[0]=new Team("Team1");
+        equipos[1]=new Team("Team2");
+        equipos[2]=new Team("Team3");
+        equipos[3]=new Team("Team4");
+        equipos[4]=new Team("Team5");
 
         return equipos;
     }
@@ -83,8 +71,24 @@ public class TournamentManager {
     }
     public void showPlayerRanking()
     {
-        Arrays.sort(players);
+        int count = 0;
         for(Player p:players)
+        {
+            if(p!=null)
+            {
+                count++;
+            }
+        }
+        Player[] playersNotNull = new Player[count];
+        for(int i = 0; i<players.length;i++)
+        {
+            if(players[i]!=null)
+            {
+                playersNotNull[i] = players[i];
+            }
+        }
+        Arrays.sort(playersNotNull);
+        for(Player p:playersNotNull)
         {
             System.out.println(p);
         }
@@ -114,22 +118,38 @@ public class TournamentManager {
         Arrays.sort(teams);
         for(Team t:teams)
         {
-            System.out.println(t.getName() + " Ranking: " + t.getAverageRanking());
+            System.out.println(t);
         }
     }
 
     public void addPlayerToTeam()
     {
         Scanner sc = new Scanner(System.in);
-        for(Tournament t:tournaments)
+        for(Team t:teams)
         {
-            System.out.println(t);
+            System.out.println(t.getName());
         }
         System.out.println("Which team did you want to fill?");
         int option = sc.nextInt();
-        for (int i=0;i<teams.length;i++)
+
+        System.out.println("Which player did you want to add?: ");
+        String name = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Player level?: ");
+        String level = sc.nextLine();
+        System.out.println("Player ranking?: ");
+        String ranking = sc.nextLine();
+        Player pl = new Player(name,Integer.parseInt(level),Float.parseFloat(ranking));
+        try
         {
-            System.out.println(teams[option-1]);
+            teams[option-1].AddPlayer(pl);
         }
+        catch (fullTeamException e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+
+
     }
 }

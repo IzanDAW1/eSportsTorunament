@@ -7,8 +7,7 @@ public class Player extends Participant implements Comparable<Player>{
     public Player(String name,int level,float ranking)
     {
         super(name);
-        Random r = new Random();
-        this.level= r.nextInt(1,101);
+        this.level = level;
         this.ranking=ranking;
     }
 

@@ -1,28 +1,24 @@
 public class Team extends Participant implements Comparable<Team>{
     Player[] players;
 
-    public Team(String name,Player[] players) {
+    public Team(String name) {
         super(name);
-        this.players = players;
+        this.players = new Player[5];
     }
-    public int countOfPlayers()
-    {
-        int count = 0;
-        for(int i=0;i<players.length;i++)
+
+    public void AddPlayer(Player pl) throws fullTeamException {
+        boolean added = false;
+        for (int i = 0; i < players.length; i++)
         {
-            if(players[i] != null)
+            if (players[i] == null && !added)
             {
-                count++;
+                players[i] = pl;
+                added = true;
             }
         }
-        return count;
-    }
-    public void AddPlayer(Player pl) throws fullTeamException{
-        if(players.length >= 5){
+        if (!added)
+        {
             throw new fullTeamException("Reached the max amount of players in a team.");
-        }
-        else{
-            players[countOfPlayers()] = pl;
         }
     }
     public Player[] getPlayers() {
@@ -31,24 +27,55 @@ public class Team extends Participant implements Comparable<Team>{
 
     @Override
     public String toString() {
+        int count = 0;
+        for(Player p:players)
+        {
+            if(p!=null)
+            {
+                count++;
+            }
+        }
+        Player[] playersNotNull = new Player[count];
+        for(int i = 0; i<players.length;i++)
+        {
+            if(players[i]!=null)
+            {
+                playersNotNull[i] = players[i];
+            }
+        }
         String playersInfo = "";
-        for (int i = 0; i < countOfPlayers(); i++) {
-            playersInfo = players[i].toString();
-            System.out.println(playersInfo);
+        for (int i = 0; i < playersNotNull.length; i++) {
+            playersInfo += playersNotNull[i].toString() + "\n";
         }
 
-        return "Nombre: "+name+" , Members: " + countOfPlayers() +"/5"
+        return "Nombre: "+name+" , Members: " + playersNotNull.length +"/5 \n"
                 + playersInfo;
     }
 
     public double getAverageRanking()
     {
-        double result=0;
-        for(int i=0;i<countOfPlayers();i++)
+        int count = 0;
+        for(Player p:players)
         {
-            result+=players[i].getRanking();
+            if(p!=null)
+            {
+                count++;
+            }
         }
-        return result/countOfPlayers();
+        Player[] playersNotNull = new Player[count];
+        for(int i = 0; i<players.length;i++)
+        {
+            if(players[i]!=null)
+            {
+                playersNotNull[i] = players[i];
+            }
+        }
+        double result=0;
+        for(int i=0;i<playersNotNull.length;i++)
+        {
+            result+=playersNotNull[i].getRanking();
+        }
+        return result/playersNotNull.length;
     }
 
     @Override
