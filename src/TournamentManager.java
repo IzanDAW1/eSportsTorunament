@@ -22,7 +22,7 @@ public class TournamentManager {
 
     public Player[] rellenarPlayers()
     {
-        Player[] jugadores = new Player[10];
+        Player[] jugadores = new Player[25];
         jugadores[0]=new Player("Izan",3,19);
         jugadores[1]=new Player("Sergio",6,14);
         jugadores[2]=new Player("Alejandro",4,14);
@@ -33,6 +33,21 @@ public class TournamentManager {
         jugadores[7]=new Player("Yassin",32,12);
         jugadores[8]=new Player("Miguel",12,10);
         jugadores[9]=new Player("Carlos",5,9);
+        jugadores[10] = new Player("Jose",6,12);
+        jugadores[11] = new Player("Maria", 15, 30);
+        jugadores[12] = new Player("Luis", 20, 50);
+        jugadores[13] = new Player("Ana", 18, 45);
+        jugadores[14] = new Player("Carlos", 12, 22);
+        jugadores[15] = new Player("Laura", 25, 65);
+        jugadores[16] = new Player("Miguel", 10, 18);
+        jugadores[17] = new Player("Elena", 17, 38);
+        jugadores[18] = new Player("Sofia", 22, 55);
+        jugadores[19] = new Player("Daniel", 8, 14);
+        jugadores[20] = new Player("Isabella", 14, 26);
+        jugadores[21] = new Player("Valeria", 16, 31);
+        jugadores[22] = new Player("Martina", 19, 48);
+        jugadores[23] = new Player("Paula", 21, 53);
+        jugadores[24] = new Player("Adriana", 13, 24);
 
         return jugadores;
     }
@@ -40,13 +55,11 @@ public class TournamentManager {
     public Team[] rellenarTeams()
     {
         Team[] equipos = new Team[5];
-        equipos[0]=new Team("Team1");
-        equipos[1]=new Team("Team2");
-        equipos[2]=new Team("Team3");
-        equipos[3]=new Team("Team4");
-        equipos[4]=new Team("Team5");
-
-
+        equipos[0]=new Team("Team1",new Player[]{players[0],players[1],players[2],players[3],players[4]});
+        equipos[1]=new Team("Team2",new Player[]{players[5],players[6],players[7],players[8],players[9]});
+        equipos[2]=new Team("Team3",new Player[]{players[13],players[11],players[15],players[17],players[18]});
+        equipos[3]=new Team("Team4",new Player[]{players[10],players[12],players[14],players[16],players[19]});
+        equipos[4]=new Team("Team5",new Player[]{players[20],players[21],players[22],players[23],players[24]});
 
         return equipos;
     }
@@ -103,7 +116,7 @@ public class TournamentManager {
         Arrays.sort(teams);
         for(Team t:teams)
         {
-            System.out.println(t);
+            System.out.println(t.getName() + " Ranking: " + t.getAverageRanking());
         }
     }
 }

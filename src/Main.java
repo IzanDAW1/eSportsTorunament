@@ -25,40 +25,43 @@ public class Main {
         TournamentManager tm = new TournamentManager();
         tm.Initialized();
         Scanner sc = new Scanner(System.in);
-        switch (GenerateMenu())
-        {
-            case "1":
-                tm.showTournaments();
-                break;
-            case "2":
-                tm.showPlayerRanking();
-                break;
-            case "3":
-                tm.showTeamRanking();
-                break;
-            case "4":
+        boolean exit = false;
+        while (!exit) {
+            switch (GenerateMenu()) {
+                case "1":
+                    tm.showTournaments();
+                    break;
+                case "2":
+                    tm.showPlayerRanking();
+                    break;
+                case "3":
+                    tm.showTeamRanking();
+                    break;
+                case "4":
 
-                break;
-            case "5":
-                System.out.println("Dime un jugador que quieras buscar: ");
-                String nombre = sc.nextLine();
-                System.out.println(tm.findPlayer(nombre));
-                break;
-            case "6":
+                    break;
+                case "5":
+                    System.out.println("Dime un jugador que quieras buscar: ");
+                    String nombre = sc.nextLine();
+                    System.out.println(tm.findPlayer(nombre));
+                    break;
+                case "6":
 
-                break;
-            case "7":
+                    break;
+                case "7":
 
-                break;
-            case "8":
+                    break;
+                case "8":
 
-                break;
-            case "9":
+                    break;
+                case "9":
 
-                break;
-            case "10":
-                System.out.println("Leaving...");
-                break;
+                    break;
+                case "10":
+                    System.out.println("Leaving...");
+                    exit = true;
+                    break;
+            }
         }
     }
 }
