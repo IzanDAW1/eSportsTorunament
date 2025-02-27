@@ -5,6 +5,10 @@ public class Team extends Participant implements Comparable<Team>{
         super(name);
         this.players = new Player[5];
     }
+    public Team(String name,Player[] players) {
+        super(name);
+        this.players = players;
+    }
 
     public void AddPlayer(Player pl) throws fullTeamException {
         boolean added = false;
